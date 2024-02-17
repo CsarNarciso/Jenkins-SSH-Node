@@ -1,3 +1,9 @@
+First, we run this command to create a container of Jenkins on docker: "docker run --name jenkins -d -p 9800:9800 -p 50000:50000 -e JENKINS_OPTS='--httpPort=9800' -v jenkins-data:/var/jenkins_home jenkins/jenkins:lts-jdk21"
+
+And then, on VirtualBox, we create a virtual machine based on ArchLinux, and configure it on network "bridged" instead of "NAT" to be ables to connect to it.
+
+Once we have a jenkins docker container running and a virtual machine succesfully up, we can continue.
+
 Steps.
 
 1 - On local machine -jenkins master- terminal type "ssh-keygen" to generate the key pair to connect to the another machine.
@@ -12,4 +18,4 @@ Steps.
 
 6 - Once done, we can verify this by this simple command: "ssh slave-machine-username@slave-machine-ip". We should now be ables to have a succesful connection to the slave machine.
 
-7 - Now, on jenkins master dashboard page, we go to Manage Jenkins, Nodes, New node
+7 - Now, on jenkins master dashboard page, we go to Manage Jenkins, Nodes, and we can create a new Node for Jenkins! 
